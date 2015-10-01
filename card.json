@@ -1,0 +1,112 @@
+{
+  "title": "Card",
+  "type": "object",
+  "defaultProperties": [
+    "title",
+    "description",
+    "chartType",
+    "domain",
+    "dataset",
+    "groupBy"
+  ],
+  "properties": {
+    "chartType": {
+      "propertyOrder": 1,
+      "title": "Chart Type",
+      "type": "string",
+      "enum": [
+        "table",
+        "bar",
+        "datetime",
+        "pie",
+        "choropleth",
+        "callout"
+      ]
+    },
+    "title": {
+      "propertyOrder": 2,
+      "title": "Title",
+      "type": "string"
+    },
+    "description": {
+      "propertyOrder": 3,
+      "title": "Description",
+      "type": "string",
+      "format": "textarea"
+    },
+    "domain": {
+      "propertyOrder": 4,
+      "title": "Domain",
+      "type": "string",
+      "description": "Domain for the data provider"
+    },
+    "dataset": {
+      "propertyOrder": 5,
+      "title": "Dataset",
+      "type": "string",
+      "description": "Dataset ID for the data provider"
+    },
+    "groupBy": {
+      "propertyOrder": 6,
+      "title": "Group By",
+      "type": "string",
+      "description": "Field to group by / pivot on"
+    },
+    "triggerField": {
+      "propertyOrder": 7,
+      "title": "Trigger Field",
+      "type": "string",
+      "description": "When this card is clicked, what field should it trigger on other charts? (defaults to value of groupBy, mostly used when groupBy includes a function)"
+    },
+    "boundaries": {
+      "propertyOrder": 8,
+      "title": "Boundaries URL",
+      "type": "string",
+      "format": "url",
+      "description": "URL of GeoJSON file"
+    },
+    "boundariesLabel": {
+      "propertyOrder": 9,
+      "title": "Boundaries Label Field",
+      "type": "string",
+      "description": "Field in GeoJSON properties that represents the label"
+    },
+    "boundariesId": {
+      "propertyOrder": 10,
+      "title": "Boundaries ID Field",
+      "type": "string",
+      "description": "Field in GeoJSON properties that represents the ID of the polygon, used to match against groupBy. For Socrata datsets, this is _feature_id"
+    },
+    "order": {
+      "propertyOrder": 11,
+      "title": "Order by",
+      "type": "string",
+      "description": "Order of data query"
+    },
+    "limit": {
+      "propertyOrder": 12,
+      "title": "Limit",
+      "type": "string",
+      "description": "Limit the number of results in the data query"
+    },
+    "baseFilters": {
+      "propertyOrder": 13,
+      "title": "Base Filters",
+      "type": "string",
+      "format": "json",
+      "description": "Base filters to always use on the data query"
+    },
+    "valueFormat": {
+      "propertyOrder": 14,
+      "title": "Value Format",
+      "type": "string",
+      "description": "Numbro format string used on values"
+    },
+    "labelFormat": {
+      "propertyOrder": 15,
+      "title": "Label Format",
+      "type": "string",
+      "description": "Moment format string used on labels"
+    }
+  }
+}
