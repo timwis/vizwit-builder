@@ -16,9 +16,142 @@
 	</head>
 	
 	<body>		
-		<div class="container" id="page-content"></div>
+		<div class="container" id="page-content">
+			
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h1>VizWit Builder</h1>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-6">
+					<form>
+						
+						<div class="form-group">
+							<label for="chartType">Chart type</label>
+							<select class="form-control" id="chartType" name="chartType">
+								<option value="">Select...</option>
+								<option value="table">Table</option>
+								<option value="bar">Bar</option>
+								<option value="datetime">Date/time</option>
+								<option value="pie">Pie</option>
+								<option value="choropleth">Choropleth Map</option>
+								<option value="callout">Callout Metric</option>
+							</select>
+						</div>
+						
+						<div class="form-group">
+							<label for="title">Title</label>
+							<input type="text" class="form-control" id="title" name="title" placeholder="ex. Type of Violation">
+						</div>
+						
+						<div class="form-group">
+							<label for="description">Description</label>
+							<textarea class="form-control" rows="2" id="description" name="description"></textarea>
+						</div>
+						
+						<fieldset>
+							
+							<legend>Data Source</legend>
+						
+							<div class="form-group">
+								<label for="domain">Domain</label>
+								<input type="text" class="form-control" id="domain" name="domain" placeholder="ex. data.phila.gov">
+								<p class="help-block">Domain for the data provider</p>
+							</div>
+						
+							<div class="form-group">
+								<label for="dataset">Dataset</label>
+								<input type="text" class="form-control" id="dataset" name="dataset" placeholder="ex. a8cx-la3p">
+								<p class="help-block">Dataset ID for the data provider</p>
+							</div>
+							
+						</fieldset>
+						
+						<fieldset>
+							
+							<legend>Chart Options</legend>
+						
+							<div class="form-group">
+								<label for="groupBy">Group by</label>
+								<input type="text" class="form-control" id="groupBy" name="groupBy" placeholder="ex. violation_type">
+								<p class="help-block">Field to group by / pivot on</p>
+							</div>
+						
+							<div class="form-group">
+								<label for="triggerField">Trigger field</label>
+								<input type="text" class="form-control" id="triggerField" name="triggerField" placeholder="ex. violation_type">
+								<p class="help-block">When this card is clicked, what field should it trigger on other charts? (defaults to value of <code>Group by</code>, mostly used when <code>Group by</code> includes a function)</p>
+							</div>
+						
+							<div class="form-group" data-chart-type="choropleth">
+								<label for="boundaries">Boundaries URL</label>
+								<input type="url" class="form-control" id="boundaries" name="boundaries" placeholder="ex. https://data.phila.gov/resource/8tb6-tjh9.geojson?limit=5000">
+								<p class="help-block">URL of GeoJSON file</p>
+							</div>
+						
+							<div class="form-group" data-chart-type="choropleth">
+								<label for="boundariesLabel">Boundaries label field</label>
+								<input type="url" class="form-control" id="boundariesLabel" name="boundariesLabel" placeholder="ex. zip_code">
+								<p class="help-block">Field in GeoJSON properties that represents the label</p>
+							</div>
+						
+							<div class="form-group" data-chart-type="choropleth">
+								<label for="boundariesId">Boundaries ID field</label>
+								<input type="url" class="form-control" id="boundariesId" name="boundariesId" placeholder="ex. _feature_id">
+								<p class="help-block">Field in GeoJSON properties that represents the ID of the polygon, used to match against groupBy</p>
+							</div>
+						
+							<div class="form-group" data-chart-type="callout">
+								<label for="valueFormat">Value format</label>
+								<input type="url" class="form-control" id="valueFormat" name="valueFormat" placeholder="ex. 0,0">
+								<p class="help-block"><a href="http://numbrojs.com/format.html" target="_blank">Numbro</a> format string used on values</p>
+							</div>
+						
+							<div class="form-group" data-chart-type="callout">
+								<label for="labelFormat">Label format</label>
+								<input type="url" class="form-control" id="labelFormat" name="labelFormat" placeholder="ex. YYYY">
+								<p class="help-block"><a href="http://momentjs.com/docs/#/displaying/" target="_blank">Moment</a> format string used on labels</p>
+							</div>
+							
+						</fieldset>
+						
+						<fieldset>
+							
+							<legend>Overrides</legend>
+						
+							<div class="form-group">
+								<label for="order">Order by</label>
+								<input type="url" class="form-control" id="order" name="order" placeholder="ex. datetime desc">
+								<p class="help-block">Order of the data query</p>
+							</div>
+						
+							<div class="form-group">
+								<label for="limit">Limit</label>
+								<input type="url" class="form-control" id="limit" name="limit" placeholder="ex. datetime desc">
+								<p class="help-block">Limit the number of results in the data query</p>
+							</div>
+						
+							<div class="form-group">
+								<label for="baseFilters">Base filters</label>
+								<textarea class="form-control" rows="4" id="baseFilters" name="baseFilters"></textarea>
+								<p class="help-block">Base filters to always use on the data query</p>
+							</div>
+							
+						</fieldset>
+						
+					</form>
+				</div>
+				<div class="col-md-6">
+					<label for="json">Result</label>
+					<textarea class="form-control" rows="12" id="json"></textarea>
+				</div>
+			</div>
+		</div>
 		
-		<script src="node_modules/json-editor/dist/jsoneditor.min.js"></script>
-		<script src="scripts/main.js"></script>
+		<script src="scripts/bundle.js"></script>
 	</body>
 </html>
