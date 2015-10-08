@@ -1,26 +1,13 @@
-var $ = require('jquery')
-var serialize = require('form-serialize')
+var $ = global.jQuery = require('jquery')
+var _ = global._ = require('lodash')
+var Backbone = require('backbone')
 
-// On form submit
-$('form').on('change', function(e) {
-	var input = serialize(this, {hash: true})
-	$('#json').val(JSON.stringify(input, null, 4))
-	e.preventDefault()
-})
+var HeaderView = require('./views/header')
+var LayoutView = require('./views/layout')
 
-// When chart type changes
-$('#chartType').on('change', function(e) {
-	if(this.value) {
-		$('[data-chart-type]').hide()
-		$('[data-chart-type="' + this.value + '"]').show()
-	}
-})
+var vent = _.clone(Backbone.Events)
 
-// When result box changes
-$('#json').on('change', function(e) {
-	var json = JSON.parse(this.value)
-	var i
-	for(i in json) {
-		$('#' + i).val(json[i])
-	}
-})
+var headerView = new HeaderView({el: '#page-header', vent: vent})
+
+var layoutView = new LayoutView({el: '#layout', vent: vent})
+layoutView.render()

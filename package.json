@@ -13,16 +13,24 @@
     "watchify": "^3.4.0"
   },
   "dependencies": {
+    "backbone": "^1.2.3",
     "form-serialize": "^0.6.0",
     "gridstack": "troolee/gridstack.js",
     "jquery": "^2.1.4",
     "jquery-ui-bundle": "^1.11.4",
     "lodash": "^3.10.1",
-    "partialify": "^3.1.5"
+    "node-underscorify": "0.0.14"
   },
   "browserify": {
     "transform": [
-      "partialify"
+      [
+        "node-underscorify",
+        {
+          "templateSettings": {
+            "variable": "data"
+          }
+        }
+      ]
     ]
   }
 }
