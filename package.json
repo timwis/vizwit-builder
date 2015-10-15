@@ -4,7 +4,7 @@
   "description": "",
   "main": "scripts/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "watchify scripts/main.js -o scripts/bundle.js"
   },
   "author": "",
   "license": "MIT",
@@ -14,8 +14,12 @@
   },
   "dependencies": {
     "backbone": "^1.2.3",
+    "backbone.modal": "^1.1.5",
+    "bootstrap": "^3.3.5",
+    "clipboard": "zenorocha/clipboard.js",
     "form-serialize": "^0.6.0",
     "gridstack": "troolee/gridstack.js",
+    "highlight.js": "^8.8.0",
     "jquery": "^2.1.4",
     "jquery-ui-bundle": "^1.11.4",
     "lodash": "^3.10.1",

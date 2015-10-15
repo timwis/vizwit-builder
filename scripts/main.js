@@ -3,6 +3,7 @@ var _ = global._ = require('lodash')
 var Backbone = require('backbone')
 
 var HeaderView = require('./views/header')
+var BuilderView = require('./views/builder')
 var LayoutView = require('./views/layout')
 
 var vent = _.clone(Backbone.Events)

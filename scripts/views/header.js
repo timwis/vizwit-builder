@@ -3,7 +3,6 @@ var Backbone = require('backbone')
 module.exports = Backbone.View.extend({
 	initialize: function(options) {
 		this.vent = options.vent
-		console.log('header', this.$el)
 	},
 	events: {
 		'click [data-bind="add"]': function(e) {

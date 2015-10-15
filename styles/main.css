@@ -1,1 +1,17 @@
 [data-chart-type] { display: none; }
+
+.grid-stack-item-content {
+	color: #2c3e50;
+	text-align: center;
+	border: 1px #000 solid;
+}
+
+.bbm-wrapper {
+	padding: 0;
+}
+
+.copy {
+	position: absolute;
+	right: 0;
+	margin-right: 30px;
+}
