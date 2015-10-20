@@ -57670,7 +57670,15 @@ module.exports = Backbone.View.extend({
 				vizwit: node.vizwit || null
 			}
 		}, this)
-		var exportView = new ExportView({model: new Backbone.Model({json: JSON.stringify(layout, null, 2)})})
+		var exportConfig = {
+			version: 1,
+			header: {
+				title: 'VizWit',
+				description: 'Lorem ipsum dolor sit amet'
+			},
+			cards: layout
+		}
+		var exportView = new ExportView({model: new Backbone.Model({json: JSON.stringify(exportConfig, null, 2)})})
 		this.$el.after(exportView.render().el)
 	}
 })
