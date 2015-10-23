@@ -57555,6 +57555,17 @@ require('backbone.modal/backbone.modal')
 module.exports = Backbone.Modal.extend({
 	template: Template,
 	cancelEl: '.cancel',
+	initialize: function() {
+		this.config = {
+			version: '2',
+			header: {
+				title: 'VizWit',
+				description: 'Lorem ipsum dolor sit amet'
+			},
+			cards: this.model.get('layout')
+		}
+		this.model.set('json', JSON.stringify(this.config, null, 2))
+	},
 	onShow: function() {
 		hljs.highlightBlock(this.$('code').get(0))
 		new Clipboard('.copy')
@@ -57590,7 +57601,7 @@ require('jquery-ui-bundle')
 require('gridstack/dist/gridstack')
 
 var items = [
-	{width: 12, height: 1}
+	{width: 12, height: 4}
 ]
 
 module.exports = Backbone.View.extend({
@@ -57645,10 +57656,10 @@ module.exports = Backbone.View.extend({
 	},
 	addCard: function(config) {
 		var markup = this.template({
-			minHeight: 3,
+			minHeight: 2,
 			minWidth: 3
 		})
-		this.grid.add_widget(markup, config.x || null, config.y || null, config.width || 6, config.height || 1, true)
+		this.grid.add_widget(markup, config.x || null, config.y || null, config.width || 6, config.height || 4, true)
 	},
 	removeCard: function(card) {
 		this.grid.remove_widget(card)
@@ -57670,15 +57681,7 @@ module.exports = Backbone.View.extend({
 				vizwit: node.vizwit || null
 			}
 		}, this)
-		var exportConfig = {
-			version: 1,
-			header: {
-				title: 'VizWit',
-				description: 'Lorem ipsum dolor sit amet'
-			},
-			cards: layout
-		}
-		var exportView = new ExportView({model: new Backbone.Model({json: JSON.stringify(exportConfig, null, 2)})})
+		var exportView = new ExportView({model: new Backbone.Model({layout: layout})})
 		this.$el.after(exportView.render().el)
 	}
 })
