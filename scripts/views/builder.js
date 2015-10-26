@@ -2,12 +2,10 @@ var $ = require('jquery')
 var Backbone = require('backbone')
 var Template = require('../templates/builder.html')
 var serialize = require('form-serialize')
-require('backbone.modal/backbone.modal')
 
-module.exports = Backbone.Modal.extend({
+module.exports = Backbone.View.extend({
 	template: Template,
-	submitEl: '[type="submit"]',
-	cancelEl: '.cancel',
+	className: 'builder',
 	serialize: function() {
 		return serialize(this.$('form').get(0), {hash: true})
 	},
@@ -17,12 +15,20 @@ module.exports = Backbone.Modal.extend({
 				$('[data-chart-type]').hide()
 				$('[data-chart-type="' + e.currentTarget.value + '"]').show()
 			}
+		},
+		'change form': function(e) {
+			this.trigger('submit', this.serialize())
+		},
+		'click .cancel': function(e) {
+			this.destroy()
+			e.preventDefault()
+		},
+		'hidden.bs.offcanvas': function(e) {
+			this.trigger('destroy')
 		}
 	},
-	submit: function() {
-		this.trigger('submit', this.serialize())
-	},
-	onDestroy: function() {
-		this.trigger('destroy')
+	render: function() {
+		this.$el.html(this.template(this.model.toJSON()))
+		return this
 	}
 })

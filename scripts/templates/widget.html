@@ -1,6 +1,9 @@
 <div<% if(data.id) { %> id="<%= data.id %>"<% } %><% if(data.minHeight) { %> data-gs-min-height="<%= data.minHeight %>"<% } %><% if(data.minWidth) { %> data-gs-min-width="<%= data.minWidth %>"<% } %>>
 	<div class="grid-stack-item-content">
-		<a href="#" data-bind="configure"><span class="fa fa-cog"></span></a>
-		<a href="#" data-bind="remove"><span class="fa fa-remove"></span></a>
+		<div class="widget-controls">
+			<a href="#" data-bind="configure"><span class="fa fa-cog"></span></a>
+			<a href="#" data-bind="remove"><span class="fa fa-remove"></span></a>
+		</div>
+		<div class="widget-container"></div>
 	</div>
 </div>

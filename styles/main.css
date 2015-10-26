@@ -15,3 +15,24 @@
 	right: 0;
 	margin-right: 30px;
 }
+
+.widget-controls {
+	position: absolute;
+	right: 5px;
+	font-size: 150%;
+}
+
+.widget-container {
+	height: 100%;
+	pointer-events: none;
+}
+
+.builder {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow-y: auto;
+	background-color: #fff;
+	z-index: 10000;
+}

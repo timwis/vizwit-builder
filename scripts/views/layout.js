@@ -4,8 +4,10 @@ var Backbone = require('backbone')
 var Template = require('../templates/widget.html')
 var BuilderView = require('./builder')
 var ExportView = require('./export')
+var vizwit = require('vizwit')
 require('jquery-ui-bundle')
 require('gridstack/dist/gridstack')
+require('jasny-bootstrap/js/offcanvas')
 
 var items = [
 	{width: 12, height: 4}
@@ -46,14 +48,23 @@ module.exports = Backbone.View.extend({
 		var cardData = this.getCardData(card)
 		
 		// Initialize a builder view with the card's current data and show it
-		var builderView = new BuilderView({model: new Backbone.Model(cardData.vizwit)})
-		this.$el.after(builderView.render().el)
+		// Theoretically any previous views should be destroyed prior to getting here
+		var builderView = new BuilderView({
+			el: '#builder',
+			model: new Backbone.Model(cardData.vizwit)
+		})
+		builderView.render().$el.offcanvas({canvas: 'body'}).offcanvas('show')
 		
 		// Listen to submit event and update the card's config
 		this.listenTo(builderView, 'submit', function(builderData) {
-			console.log('submitted via layout', builderData)
 			cardData.vizwit = builderData
 			this.setCardData(card, cardData)
+			
+			// Initialize vizwit on card if enough fields are set
+			if(cardData.vizwit.chartType && cardData.vizwit.domain && cardData.vizwit.dataset) {
+				console.log('initializing', cardData.vizwit)
+				vizwit.init($('.widget-container', card), cardData.vizwit)
+			}
 		})
 		
 		// Listen to destroy event and then stop listening

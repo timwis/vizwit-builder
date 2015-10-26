@@ -14,10 +14,13 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/backbone.modal/1.1.5/backbone.modal-min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/backbone.modal/1.1.5/backbone.modal.theme-min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
 		<link rel="stylesheet" href="styles/main.css">
 	</head>
 	
 	<body>
+		<div id="builder" class="offcanvas navmenu navmenu-default navmenu-fixed-left"></div>		
+		
 		<div class="row">
 			<div class="col-md-12">
 				<div class="container" id="page-header">
@@ -25,8 +28,8 @@
 						<h1>
 							VizWit Builder
 							<small>
-								<a href="#" data-bind="add">Add</a>
-								<a href="#" data-bind="export">Export</a>
+								<a href="#" class="btn" data-bind="add">Add Card</a>
+								<a href="#" class="btn" data-bind="export">Export Cards</a>
 							</small>
 						</h1>
 					</div>
