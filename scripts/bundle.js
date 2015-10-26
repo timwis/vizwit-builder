@@ -114840,11 +114840,11 @@ __p+='>Callout Metric</option>\n\t\t\t\t</select>\n\t\t\t</div>\n\t\t\t\n\t\t\t<
 ((__t=( data.title ))==null?'':__t)+
 '">\n\t\t\t</div>\n\t\t\t\n\t\t\t<div class="form-group">\n\t\t\t\t<label for="description">Description</label>\n\t\t\t\t<textarea class="form-control" rows="2" id="description" name="description">'+
 ((__t=( data.description ))==null?'':__t)+
-'</textarea>\n\t\t\t</div>\n\t\t\t\n\t\t\t<fieldset>\n\t\t\t\t\n\t\t\t\t<legend>Data Source</legend>\n\t\t\t\n\t\t\t\t<div class="form-group">\n\t\t\t\t\t<label for="domain">Domain</label>\n\t\t\t\t\t<input type="text" class="form-control" id="domain" name="domain" placeholder="ex. data.phila.gov" value="data.phila.gov'+
+'</textarea>\n\t\t\t</div>\n\t\t\t\n\t\t\t<fieldset>\n\t\t\t\t\n\t\t\t\t<legend>Data Source</legend>\n\t\t\t\n\t\t\t\t<div class="form-group">\n\t\t\t\t\t<label for="domain">Domain</label>\n\t\t\t\t\t<input type="text" class="form-control" id="domain" name="domain" placeholder="ex. data.phila.gov" value="'+
 ((__t=( data.domain ))==null?'':__t)+
-'">\n\t\t\t\t\t<p class="help-block">Domain for the data provider</p>\n\t\t\t\t</div>\n\t\t\t\n\t\t\t\t<div class="form-group">\n\t\t\t\t\t<label for="dataset">Dataset</label>\n\t\t\t\t\t<input type="text" class="form-control" id="dataset" name="dataset" placeholder="ex. a8cx-la3p" value="2pfz-fnns'+
+'">\n\t\t\t\t\t<p class="help-block">Domain for the data provider</p>\n\t\t\t\t</div>\n\t\t\t\n\t\t\t\t<div class="form-group">\n\t\t\t\t\t<label for="dataset">Dataset</label>\n\t\t\t\t\t<input type="text" class="form-control" id="dataset" name="dataset" placeholder="ex. a8cx-la3p" value="'+
 ((__t=( data.dataset ))==null?'':__t)+
-'">\n\t\t\t\t\t<p class="help-block">Dataset ID for the data provider</p>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t</fieldset>\n\t\t\t\n\t\t\t<fieldset>\n\t\t\t\t\n\t\t\t\t<legend>Chart Options</legend>\n\t\t\t\n\t\t\t\t<div class="form-group">\n\t\t\t\t\t<label for="groupBy">Value field</label>\n\t\t\t\t\t<input type="text" class="form-control" id="groupBy" name="groupBy" placeholder="ex. violation_type" value="violation_description'+
+'">\n\t\t\t\t\t<p class="help-block">Dataset ID for the data provider</p>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t</fieldset>\n\t\t\t\n\t\t\t<fieldset>\n\t\t\t\t\n\t\t\t\t<legend>Chart Options</legend>\n\t\t\t\n\t\t\t\t<div class="form-group">\n\t\t\t\t\t<label for="groupBy">Value field</label>\n\t\t\t\t\t<input type="text" class="form-control" id="groupBy" name="groupBy" placeholder="ex. violation_type" value="'+
 ((__t=( data.groupBy ))==null?'':__t)+
 '">\n\t\t\t\t\t<p class="help-block">Field to group by / pivot on</p>\n\t\t\t\t</div>\n\t\t\t\n\t\t\t\t<div class="form-group">\n\t\t\t\t\t<label for="groupBy">Group by</label>\n\t\t\t\t\t<input type="text" class="form-control" id="groupBy" name="groupBy" placeholder="ex. violation_type" value="'+
 ((__t=( data.groupBy ))==null?'':__t)+
