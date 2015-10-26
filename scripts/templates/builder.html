@@ -8,12 +8,12 @@
 				<label for="chartType">Chart type</label>
 				<select class="form-control" id="chartType" name="chartType">
 					<option value="">Select...</option>
-					<option value="table">Table</option>
-					<option value="bar">Bar</option>
-					<option value="datetime">Date/time</option>
-					<option value="pie">Pie</option>
-					<option value="choropleth">Choropleth Map</option>
-					<option value="callout">Callout Metric</option>
+					<option value="table"<% if(data.chartType === 'table') { %> selected="selected"<% } %>>Table</option>
+					<option value="bar"<% if(data.chartType === 'bar') { %> selected="selected"<% } %>>Bar</option>
+					<option value="datetime"<% if(data.chartType === 'datetime') { %> selected="selected"<% } %>>Date/time</option>
+					<option value="pie"<% if(data.chartType === 'pie') { %> selected="selected"<% } %>>Pie</option>
+					<option value="choropleth"<% if(data.chartType === 'choropleth') { %> selected="selected"<% } %>>Choropleth Map</option>
+					<option value="callout"<% if(data.chartType === 'callout') { %> selected="selected"<% } %>>Callout Metric</option>
 				</select>
 			</div>
 			
