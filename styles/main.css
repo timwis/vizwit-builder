@@ -36,3 +36,7 @@
 	background-color: #fff;
 	z-index: 10000;
 }
+
+.bbm-modal__section a {
+  color: #337ab7;
+}
