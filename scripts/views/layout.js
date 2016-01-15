@@ -9,16 +9,15 @@ require('jquery-ui-bundle')
 require('gridstack/dist/gridstack')
 require('jasny-bootstrap/js/offcanvas')
 
-var items = [
-	{width: 12, height: 4}
-]
-
 module.exports = Backbone.View.extend({
 	settings: {
 		resizable: {
 			handles: 'e, se, s, sw, w'
 		}
 	},
+	items: [
+		{width: 12, height: 4}
+	],
 	template: Template,
 	initialize: function(options) {
 		this.vent = options.vent
@@ -30,7 +29,7 @@ module.exports = Backbone.View.extend({
 		this.grid = this.$el.gridstack(this.settings).data('gridstack')
 		
 		// Add items
-		items.forEach(this.addCard, this)
+		this.items.forEach(this.addCard, this)
 		
 		return this
 	},
@@ -77,7 +76,13 @@ module.exports = Backbone.View.extend({
 			minHeight: 2,
 			minWidth: 3
 		})
-		this.grid.add_widget(markup, config.x || null, config.y || null, config.width || 6, config.height || 4, true)
+		var card = this.grid.add_widget(markup, config.x || null, config.y || null, config.width || 6, config.height || 4, true)
+		if(config.vizwit) {
+			var cardData = this.getCardData(card)
+			cardData.vizwit = config.vizwit
+			this.setCardData(card, cardData)
+			vizwit.init($('.widget-container', card), config.vizwit)
+		}
 	},
 	removeCard: function(card) {
 		this.grid.remove_widget(card)
