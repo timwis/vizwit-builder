@@ -30,6 +30,14 @@
 			<fieldset>
 				
 				<legend>Data Source</legend>
+								
+        <div class="form-group">
+          <label for="provider">Provider</label>
+          <select class="form-control" id="provider" name="provider">
+            <!--<option value="">Select...</option>-->
+            <option value="socrata"<% if(data.provider === 'socrata') { %> selected="selected"<% } %>>Socrata</option>
+          </select>
+        </div>
 			
 				<div class="form-group">
 					<label for="domain">Domain</label>
