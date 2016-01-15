@@ -4,6 +4,7 @@
   "description": "",
   "main": "scripts/main.js",
   "scripts": {
+    "build": "browserify scripts/main.js -o scripts/bundle.js",
     "watch": "watchify scripts/main.js -o scripts/bundle.js"
   },
   "author": "",
