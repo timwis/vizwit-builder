@@ -58,12 +58,6 @@
 				<legend>Chart Options</legend>
 			
 				<div class="form-group">
-					<label for="groupBy">Value field</label>
-					<input type="text" class="form-control" id="groupBy" name="groupBy" placeholder="ex. violation_type" value="<%= data.groupBy %>">
-					<p class="help-block">Field to group by / pivot on</p>
-				</div>
-			
-				<div class="form-group">
 					<label for="groupBy">Group by</label>
 					<input type="text" class="form-control" id="groupBy" name="groupBy" placeholder="ex. violation_type" value="<%= data.groupBy %>">
 					<p class="help-block">Field to group by / pivot on</p>
@@ -110,6 +104,12 @@
 			<fieldset>
 				
 				<legend>Overrides</legend>
+			
+				<div class="form-group">
+					<label for="groupBy">Value field</label>
+					<input type="text" class="form-control" id="groupBy" name="groupBy" placeholder="ex. violation_type" value="<%= data.groupBy %>">
+					<p class="help-block">Allows complete override of what is selected as the value, which is normally done through aggregation. ex. <code>sum(votes) / sum(total) * 100</code></p>
+				</div>
 			
 				<div class="form-group">
 					<label for="order">Order by</label>
